@@ -1,0 +1,248 @@
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.all @ categories='designs.uopx.components.content.fosaoiSearch'}" data-sly-use.model="com.aptimus.uopx.sling.models.SearchComponentModel" />
+
+<div data-sly-test.fos="${pageProperties.fos ? pageProperties.fos : ''}" data-sly-unwrap></div>
+<div data-sly-test.aoi="${pageProperties.aoi ? pageProperties.aoi : ''}" data-sly-unwrap></div>
+<div data-sly-test.degree="${pageProperties.degree ? pageProperties.degree : ''}" data-sly-unwrap></div>
+<div data-sly-test.isModalityOnline="${currentStyle.onlineModality ? currentStyle.onlineModality : false}" data-sly-unwrap></div>
+<div data-sly-test.isModalityCampus="${currentStyle.campusModality ? currentStyle.campusModality : false}" data-sly-unwrap></div>
+
+
+<div class="container">
+  <div class="row position_relative">
+    <!-- /navbar wrapper -->
+    <!-- Carousel
+================================================== -->
+
+    <div id="myCarousel" class="carousel slide">
+      <!-- Indicators -->
+      <div class="carousel-inner"></div>
+      <!-- Controls -->
+    </div>
+    <!-- /.carousel -->
+  </div>
+  <!-- copy below code++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <div class="row mB20 background_gray pT30">
+    <div class="col-sm-3 visible-xs">
+      <div class="col-sm-12 mB20 panel0">
+        <span class="program_select plain-select"> <select class="inp selectProgram" name="test">
+						<option value="Select">Refine Results</option>
+						<option value="Business">Business</option>
+						<option value="Business Program">Business Program</option>
+					</select>
+				</span>
+      </div>
+    </div>
+    <div class="col-sm-3 hidden-xs">
+      <div class="col-sm-12 mB20 zipBox panel0">
+        <label>
+					<span class="tooltips">
+						<input class="zipCodeInputBox inp" type="text" title="Zip Code" value="85014" maxlength="5" />
+						<span class="tooltiptext"><span class="triangle left border"></span><span class="error_msg"></span></span>
+					</span>
+					<span class="fa fa-map-marker plain-select_location"></span>
+				</label>
+      </div>
+      <div class="col-sm-12 mB20 panel0 showDataBox">
+        <div class="col-sm-12 mB20 panel0">
+          <div class="custom-checkbox">
+            <input type="checkbox" id="cb1" value="Online" name="degree1">
+            <label for="cb1">Online</label>
+          </div>
+          <div class="custom-checkbox">
+            <input type="checkbox" id="cb2" value="On Campus" name="degree2">
+            <label for="cb2">On Campus</label>
+          </div>
+        </div>
+        <div class="col-sm-12 mB20 panel0">
+          <span class="program_select plain-select"> <select class="inp selectProgram" name="test">
+							<option value="Select">Select</option>
+							<sly data-sly-list.fosData="${model.fosList}">
+								<option value="${fosData.name}">${fosData.title}</option>
+							</sly>
+						</select>
+					</span>
+        </div>
+        <div class="col-sm-12 mB20 panel0 hidden-xs">
+          <div class="col-sm-12 mB20 panel0">
+            <div class="col-sm-12 panel0">
+              <h2 class="">
+                <span>DEGREES & PROGRAMS</span>
+              </h2>
+            </div>
+            <div class="col-sm-12 mB20 panel0">
+              <div class="accordion-container-left degree-class">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 mB20 panel0">
+            <div class="col-sm-12 panel0">
+              <h2 class="">
+                <span>AREAS OF INTEREST</span>
+              </h2>
+            </div>
+            <div class="col-sm-12 mB20 panel0">
+              <div class="accordion-container-left aoi-class">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9 showDataBox">
+      <div class="col-sm-12 clearTeaxt mB20 panel0">
+        <ul start="1" id="activeUserAccess" class="panel0">
+        </ul>
+      </div>
+      <div class="col-sm-12 mT20 panel0">
+        <input type=hidden id="fosUrlMapping" name="fosUrlMapping" url=${model.fosMapping}></input>
+        <div class="accordion-container">
+          <div class="ac">
+            <h2 class="ac-q ac-r" tabindex="0">
+              <span>Bachelor of Science in Accounting</span>
+            </h2>
+            <div class="ac-a">
+              <div class="panel-body">
+                <div class="col-sm-9">
+                  <div class="col-sm-12">
+                    <p>From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by
+                      instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical
+                      knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®,
+                      a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career.
+                    </p>
+                    <p>From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by
+                      instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical
+                      knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.</p>
+                  </div>
+                  <div class="col-sm-12">
+                    <ul class="list-group">
+                      <li class=""><span>Auditor</span></li>
+                      <li class=""><span>Tax Examiner</span></li>
+                      <li class=""><span>Examining Officer</span></li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-12">
+                    <button type="button" class="btn btn-danger btnSpace">See
+											program details</button>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="col-sm-12">
+                    <p class="text-center font30 ">
+                      <i class="glyphicon glyphicon-user"></i>
+                    </p>
+                    <p class="text-center">Online Course</p>
+                  </div>
+                  <div class="col-sm-12">
+                    <p class="text-center font30 greenColor">
+                      <span> 5</span>
+                    </p>
+                    <p class="text-center">Week Cources</p>
+                  </div>
+                  <div class="col-sm-12">
+                    <p class="text-center font30 greenColor">
+                      <span> 4</span>
+                    </p>
+                    <p class="text-center">Year Program</p>
+                  </div>
+                  <div class="col-sm-12">
+                    <p class="text-center font30 greenColor">
+                      <span>120</span>
+                    </p>
+                    <p class="text-center">Credit Hours</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ac">
+            <h2 class="ac-q ac-r" tabindex="0">
+              <span>Bachelor of Science in Accounting</span>
+              <ul class="right_collapse_arrow pL15">
+                <li class=""><span><i>with an Associate of Arts
+											in Business Fundamentals</i></span></li>
+              </ul>
+            </h2>
+            <div class="ac-a">
+              <div class="panel-body">
+                <div class="col-sm-9">
+                  <div class="col-sm-12">
+                    <p>From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by
+                      instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical
+                      knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®,
+                      a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career.
+                    </p>
+                    <p>From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical knowledge to apply in your career. Plus, you’ll be taught by
+                      instructors averaging 25 years of real-world business experience. From auditing and taxation to the hands-on application of accounting software such as Intuit® QuickBooks®, a Bachelor of Science in Accounting can help you gain practical
+                      knowledge to apply in your career. Plus, you’ll be taught by instructors averaging 25 years of real-world business experience.</p>
+                  </div>
+                  <div class="col-sm-12">
+                    <ul class="list-group">
+                      <li class=""><span>Auditor</span></li>
+                      <li class=""><span>Tax Examiner</span></li>
+                      <li class=""><span>Examining Officer</span></li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-12">
+                    <button type="button" class="btn btn-danger btnSpace">See
+											program details</button>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="col-sm-12">
+                    <p class="text-center font30 ">
+                      <i class="glyphicon glyphicon-user"></i>
+                    </p>
+                    <p class="text-center">Online Course</p>
+                  </div>
+                  <div class="col-sm-12">
+                    <p class="text-center font30 greenColor">
+                      <span> 5</span>
+                    </p>
+                    <p class="text-center">Week Cources</p>
+                  </div>
+                  <div class="col-sm-12">
+                    <p class="text-center font30 greenColor">
+                      <span> 4</span>
+                    </p>
+                    <p class="text-center">Year Program</p>
+                  </div>
+                  <div class="col-sm-12">
+                    <p class="text-center font30 greenColor">
+                      <span>120</span>
+                    </p>
+                    <p class="text-center">Credit Hours</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- copy above code only++++++++++++++++++++++++++++++++++++++++++-->
+  </div>
+  <noscript>
+		<div data-sly-list.program="${model.noScriptData}" data-sly-unwrap>
+			<div>
+				<sly data-sly-test="${program.programLink != null|| program.programLink != 'none' || program.programLink != ''}">
+					<a class="program-title" href="${program.programLink}">${program.programTitle}</a> <br>
+				</sly>
+				<sly data-sly-test="${program.programDescription != null|| program.programDescription != 'none' || program.programDescription != ''}">
+					${program.programDescription @ context='html'}
+				</sly>
+
+			</div>
+		</div>
+	</noscript>
+  <script>
+    var accordion = new Accordion('.accordion-container');
+    var fosAoiSeachObj = {};
+    fosAoiSeachObj.fos = "${fos || '' @ context='scriptString'}";
+    fosAoiSeachObj.aoi = "${aoi || '' @ context='scriptString'}";
+    fosAoiSeachObj.degree = "${degree || '' @ context='scriptString'}";
+    fosAoiSeachObj.isModalityOnline = "${isModalityOnline @ context='scriptString'}";
+    fosAoiSeachObj.isModalityOnline = "${isModalityOnline @ context='scriptString'}";
+    fosAoiSeachObj.fosMapping = "${model.fosMapping @ context='scriptString'}";
+
+  </script>
+</div>

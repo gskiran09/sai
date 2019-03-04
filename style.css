@@ -1,0 +1,749 @@
+.selcls {
+  padding: 14px;
+  border: solid 1px #80808052;
+  outline: 0;
+  background: white;
+  height: 45px;
+}
+
+.font_65 h1 {
+  font-size: 65px;
+  font-weight: bold;
+}
+
+/*  css start for custom checkboxes */
+
+.custom-checkbox>[type="checkbox"],
+.custom-checkbox>label {
+  margin-bottom: 0px !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.custom-checkbox>[type="checkbox"]:not(:checked),
+.custom-checkbox>[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-checkbox>[type="checkbox"]:not(:checked)+label,
+.custom-checkbox>[type="checkbox"]:checked+label {
+  position: relative;
+  padding-left: 22px;
+  cursor: pointer;
+}
+
+.custom-checkbox>[type="checkbox"]:not(:checked)+label:before,
+.custom-checkbox>[type="checkbox"]:checked+label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -9px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #ddd;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.custom-checkbox>[type="checkbox"]:not(:checked)+label:after,
+.custom-checkbox>[type="checkbox"]:checked+label:after {
+  /** font: normal normal normal 12px/1 'Glyphicons Halflings';**/
+  font: normal normal normal 14px/1 FontAwesome;
+  content: '\f00c';
+  position: absolute;
+  top: 50%;
+  margin-top: -9px;
+  left: 2px;
+  color: #2ab2da;
+  xtransition: all .2s;
+}
+
+.custom-checkbox>[type="checkbox"]:not(:checked)+label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.custom-checkbox>[type="checkbox"]:checked+label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.custom-checkbox>[type="checkbox"][data-indeterminate]+label:after,
+.custom-checkbox>[type="checkbox"][data-indeterminate]+label:after {
+  content: '\2212';
+  left: 2px;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.custom-checkbox>[type="checkbox"]:disabled:not(:checked)+label:before,
+.custom-checkbox>[type="checkbox"]:disabled:checked+label:before {
+  box-shadow: none;
+  background-color: #eeeeee;
+  border-color: #eeeeee;
+  cursor: not-allowed;
+  opacity: 1;
+  color: #dadada;
+}
+
+.custom-checkbox>[type="checkbox"]:disabled:checked+label:after {
+  color: #dadada;
+  cursor: not-allowed;
+}
+
+.custom-checkbox>[type="checkbox"]:disabled+label {
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.custom-checkbox>[type="checkbox"]:checked:focus+label:before,
+.custom-checkbox>[type="checkbox"]:not(:checked):focus+label:before {
+  border: 1px solid #66afe9;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.custom-checkbox>label:hover:before {
+  border: 1px solid #88D2FF !important;
+}
+
+.custom-checkbox>[type="checkbox"]:disabled:not(:checked)+label:hover:before,
+.custom-checkbox>[type="checkbox"]:disabled:checked+label:hover:before {
+  border: 1px solid #E4E4E4 !important;
+}
+
+/*  css end for custom checkboxes */
+
+/*css start for collapse*/
+
+/*******************************
+* Does not work properly if "in" is added after "collapse".
+* Get free snippets on bootpen.com
+*******************************/
+
+body {
+  background: #fff;
+}
+
+.wrapper {
+  width: 70%;
+}
+
+@media(max-width:992px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.panel-heading {
+  padding: 0;
+  border: 0;
+}
+
+.panel0 {
+  padding: 0;
+}
+
+ul#activeUserAccess li {
+  margin-right: 10px;
+}
+
+.panel-title>a,
+.panel-title>a:active {
+  display: block;
+  padding: 15px;
+  color: #555;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  text-decoration: none;
+}
+
+.panel-heading a.collapsed:before {
+  content: "\f067";
+  transition: all 0.5s;
+  top: 1px;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.panel-heading a:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f068";
+  float: right;
+  transition: all 0.5s;
+  font-weight: normal;
+  color: #00adff;
+}
+
+.panel-heading.rightCollapse a:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: '\f056';
+  float: right;
+  transition: all 0.5s;
+  color: #2ab2da;
+  font-size: 20px;
+}
+
+.panel-heading.rightCollapse a.collapsed:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: '\f055';
+  transition: all 0.5s;
+  top: 1px;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  color: #2ab2da;
+  font-size: 20px;
+}
+
+ul.list-group li:before {
+  content: "\e092";
+  transition: all 0.5s;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 5px;
+  font-size: 9px;
+}
+
+ul.list-group li {
+  list-style-type: none;
+}
+
+/* .panel-heading.active a:before {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      transform: rotate(180deg);
+  } */
+
+/*css end for collapse*/
+
+/* CSS for clear teaxt */
+
+.clearTeaxt ul li {
+  border: 1px solid transparent;
+  display: inline-block;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 25px;
+  background: white;
+}
+
+.clearTeaxt ul li:before {
+  content: "\e014";
+  transition: all 0.5s;
+  top: 8px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  padding-left: 0px;
+  padding-right: 4px;
+  margin-top: 5px;
+  font-size: 9px;
+}
+
+.btnSpace {
+  padding: 8px 25px;
+}
+
+.font30 i {
+  font-size: 30px;
+}
+
+.font30 span {
+  font-size: 30px;
+}
+
+.greenColor {
+  color: #2ab2da;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.mT20 {
+  margin-top: 20px;
+}
+
+.mB20 {
+  margin-bottom: 20px;
+}
+
+/* BOOTSTRAP 3.x GLOBAL STYLES
+-------------------------------------------------- */
+
+.overlay {
+  color: #fff;
+  position: absolute;
+  z-index: 12;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.position_relative {
+  position: relative;
+}
+
+/* CUSTOMIZE THE NAVBAR
+  -------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+
+.navbar-wrapper {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+  -------------------------------------------------- */
+
+/* Carousel base class */
+
+.carousel {
+  margin-bottom: 60px;
+}
+
+/* Since positioning the image, we need to help out the caption */
+
+.carousel-caption {
+  z-index: 1;
+}
+
+/* Declare heights because of positioning of img element */
+
+.carousel .item {
+  height: 400px;
+  background-color: #555;
+}
+
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 400px;
+}
+
+/* RESPONSIVE CSS
+  -------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    /*margin-top: 75px;
+        margin-bottom: -90px;*/
+    /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+  }
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+}
+
+ul.white li {
+  color: white;
+  background: none;
+  display: inline-block;
+  float: left;
+}
+
+ul.white li a {
+  color: white;
+  background: none;
+  padding-left: 5px;
+  padding-right: 9px;
+}
+
+ul.white li a:hover {
+  background-color: transparent;
+}
+
+ul.white li a:active {
+  background-color: transparent;
+}
+
+ul.white li a:focus {
+  background-color: transparent;
+}
+
+ul.navbar-nav li:not(:first-child):before {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: '\f00c';
+  transition: all 0.5s;
+  top: 1px;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 5px;
+  font-size: 9px;
+}
+
+.navbar-nav>li>a {
+  padding-top: 0px;
+  float: right;
+}
+
+.carousel {
+  margin-bottom: 0px;
+}
+
+label {
+  font-weight: normal;
+  font-size: 13px;
+}
+
+.panel-title>a,
+.panel-title>a:active {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.panel-group .panel+.panel {
+  margin-top: 15px;
+}
+
+#activeUserAccess li {
+  list-style-type: none;
+}
+
+.background_gray {
+  background: #EEEEEE;
+}
+
+.panell_color {
+  background: #EEEEEE;
+  border: 1px solid transparent;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, .05)
+}
+
+.panel-default>.panel-heading.pannel_heading_left {
+  color: #333;
+  background-color: #EEEEEE;
+  border-color: #ddd;
+  border-top: 2px solid #8080801f;
+  border-radius: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #8080801f;
+  margin-bottom: -1px;
+  margin-top: -1px;
+}
+
+.right_panel_titlel {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: white;
+  border-radius: 10px;
+}
+
+.right_panel_titlel a {
+  padding-bottom: 5px !important;
+}
+
+.panel.panel_right {
+  -webkit-box-shadow: 0 6px 7px rgba(0, 0, 0, .05);
+  box-shadow: 0 6px 7px rgba(0, 0, 0, .05);
+  border-radius: 10px !important;
+}
+
+.panel_right .rightCollapse {
+  border-radius: 13px;
+}
+
+.pT30 {
+  padding-top: 35px;
+}
+
+.pL0 {
+  padding-left: 0px;
+}
+
+.panel-title>a,
+.panel-title>a:active {
+  display: block;
+  padding: 15px;
+  color: #555;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  text-decoration: none;
+  text-transform: inherit;
+}
+
+/*****************************************************************************/
+
+.plain-select {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 200px;
+}
+
+.plain-select select {
+  line-height: normal;
+  height: 38px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  width: 200px;
+  border-radius: 6px;
+  display: block;
+  width: 100%;
+  border: 1px solid #c8c8c8;
+  background: #fff url(images/inpbg.png) repeat-x 0 0;
+  color: black;
+  padding: 8px 20px 7px 10px;
+  margin: 0;
+  line-height: normal;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.ie8 .plain-select select {
+  padding-right: 3px
+}
+
+.plain-select select:focus {
+  background: #f9f9f9;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), inset 0 0 7px rgba(100, 100, 100, 0.3);
+  border-color: #00c0f3;
+}
+
+.plain-select ::-ms-expand {
+  display: none;
+}
+
+.plain-select:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: 8px;
+  top: 56%;
+  margin-top: -3px;
+  height: 0;
+  width: 0;
+  border-top: 6px solid #2ab2da;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  pointer-events: none;
+}
+
+.plain-select:before {
+  content: '';
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid #3231c500;
+  width: 0;
+  height: 0;
+  right: 8px;
+  bottom: 55%;
+  border-width: 0 5.5px 7px 4.5px;
+  border-bottom-color: #2ab2da;
+}
+
+.program_select.plain-select {
+  width: 100%;
+}
+
+/************code for location Icon****************************************/
+
+.inp {
+  height: 40px;
+  width: 180px;
+}
+
+.plain-select_location {
+  position: absolute;
+  right: 26px;
+  top: 11px;
+  font-size: 15px;
+}
+
+.zipBox label {
+  position: relative;
+}
+
+ul.right_collapse_arrow li:before {
+  content: "\f0da";
+  transition: all 0.5s;
+  top: 8px;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  padding-left: 0px;
+  padding-right: 4px;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+ul.right_collapse_arrow li {
+  list-style-type: none;
+}
+
+.pL15 {
+  padding-left: 15px;
+}
+
+@media(max-width: 475px) {
+  .font_65 h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+}
+
+/******************************************************************/
+
+h2>span {
+  padding: 13px;
+  color: #555;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.panel-body {
+  border-top: 1px solid #ddd;
+  background-color: #EEEEEE;
+}
+
+.accordion-container-left .ac {
+  border: none;
+  border-top: 2px solid #ddd;
+  border-radius: 0px;
+  border-bottom: 2px solid #ddd;
+}
+
+.accordion-container-left .ac.active {
+  border-bottom: none;
+}
+
+.ac.active>.ac-q::after {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: '\f056';
+  float: right;
+  transition: all 0.5s;
+  color: #2ab2da;
+  font-size: 20px;
+}
+
+.ac.active>.ac-q.left::after {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: '\f068';
+  float: right;
+  transition: all 0.5s;
+  color: #2ab2da;
+}
+
+/*******code for tooltpi error message***********************************************/
+
+.error_msg {
+  color: red;
+  float: left;
+  padding-left: 10px;
+}
+
+.tooltips {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltips .tooltiptext {
+  visibility: hidden;
+  width: 144%;
+  background-color: white;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 108%;
+  height: 50px;
+  line-height: 36px;
+  border: 1px solid red;
+}
+
+.tooltips .tooltiptext.showTooltip {
+  visibility: visible;
+}
+
+.triangle {
+  width: 60px;
+  height: 66px;
+  display: inline-block;
+  position: absolute;
+  top: 28%;
+  right: 81%;
+}
+
+.triangle.left:before {
+  border-right: 13px solid red;
+  left: -2%;
+}
+
+.triangle.left:before,
+.triangle.right:before {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+.triangle.left:after {
+  border-right: 10px solid white;
+  left: 3%;
+  top: 1%;
+  z-index: 5;
+}
+
+.triangle.left:after,
+.triangle.right:after {
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+
+.triangle:after,
+.triangle.border:before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+}
+
+/********************************************************************************/
