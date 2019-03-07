@@ -1,0 +1,61 @@
+{{#ifCond parentProgramFlag "==" "true" }}
+<div class="pfResultItem">
+    {{#programs}}
+        {{#attributes}}
+            {{#ifCond isParentProgram "==" "true" }}
+                <div class="parentPrograms-icon parentProg-block ">
+                    <div class="mainResult-block col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                        <div class="parentProgramsImgBlock col-lg-7 col-md-7 col-xs-12 col-sm-12">
+                            {{#if programVideoRef}}
+                                <a id="modal-video-{{adaId}}" href="{{programVideoRef}}" class="modal-video" role="button" tabindex="-1" target="_blank" onclick="singlePageProgramFinder.videoClickEvent(event)" onkeydown="singlePageProgramFinder.videoClickEvent(event)">
+	                                <img alt="" src="{{programImageRef}}" />
+                                    <i class="fa fa-play-circle-o" aria-label="video play" tabindex="0"></i>
+                                </a>
+                            {{/if}}
+                            {{#unless programVideoRef}}
+	                            <img alt="" src="{{programImageRef}}" />
+                            {{/unless}}
+                        </div>
+                        <div class="parentPrograms-item parentProg-item col-lg-5 col-md-5 col-xs-12 col-sm-12" target="_blank">
+                            <h2 id="prog-heading-{{adaId}}" class="prog-heading" tabindex="0">{{programAltName}}</h2>
+                            <div id="prog-body-{{adaId}}" class="prog-body" tabindex="0">{{{programDescriptionShort}}}</div>
+                            <div id="prog-ctaButton-{{adaId}}" class="prog-ctaButton">
+                                <a id="ctaLink-btn-{{adaId}}" href="{{ref}}" onclick="singlePageProgramFinder.storeDataForBackButton(event)" onkeydown="singlePageProgramFinder.storeDataForBackButton(event)" class="ctaLink btn" role="button">{{programCTALabel}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/ifCond}}
+        {{/attributes}}
+    {{/programs}}
+</div>
+
+{{/ifCond}}
+{{#ifCond childProgramFlag "==" "true" }}
+
+<div class="MarketingTextForSecondaryPrg {{parentProgramFlag}}" tabindex="0"><span>{{secondarymarketingText}}</span></div>
+
+<div class="pfResultItemSecondary col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    {{#programs}}
+        {{#attributes}}
+            {{#ifCond isParentProgram "!=" "true" }}
+                <div class="parentPrograms-icon parentProg-block col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                    <div class="mainResult-block col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                        <div class="parentProgramsImgBlock col-lg-7 col-md-7 col-xs-12 col-sm-12 hide">
+                            <img alt="" src="{{programImageRef}}" />
+                        </div>
+                        <div class="parentPrograms-item parentProg-item col-lg-12 col-md-12 col-xs-12 col-sm-12" target="_blank">
+                            <h2 id="prog-heading-{{adaId}}" class="prog-heading" tabindex="0">{{programAltName}}</h2>
+                            <div id="prog-body-{{adaId}}" class="prog-body" tabindex="0">{{{programDescriptionShort}}}</div>
+                            <div id="prog-ctaButton-{{adaId}}" class="prog-ctaButton">
+                                <a href="{{ref}}" id="ctaLink-btn-{{adaId}}" class="ctaLink btn" onclick="singlePageProgramFinder.storeDataForBackButton(event)" onkeydown="singlePageProgramFinder.storeDataForBackButton(event)" role="button">{{programCTALabel}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/ifCond}}
+        {{/attributes}}
+    {{/programs}}
+</div>
+
+{{/ifCond}}

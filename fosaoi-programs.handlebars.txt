@@ -1,0 +1,58 @@
+{{#programData}}
+<div class="accordion-container">
+	<div class="ac">
+		<h2 class="ac-q ac-r" tabindex="0">
+			<span>{{title}}</span>
+			<ul class="right_collapse_arrow pL15">
+				<li class=""><span><i>{{subTitle}}</i></span></li>
+			</ul>
+		</h2>
+		<div class="ac-a">
+			<div class="panel-body">
+				<div class="col-sm-9">
+					<div class="col-sm-12">
+						{{description}}
+					</div>
+					<div class="col-sm-12">
+						<ul class="list-group">
+							<li class=""><span>Auditor</span></li>
+							<li class=""><span>Tax Examiner</span></li>
+							<li class=""><span>Examining Officer</span></li>
+						</ul>
+					</div>
+					<div class="col-sm-12">
+						<button type="button" class="btn btn-danger btnSpace">See
+							program details</button>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="col-sm-12">
+						<p class="text-center font30 ">
+							<i class="glyphicon glyphicon-user"></i>
+						</p>
+						<p class="text-center">Online Course</p>
+					</div>
+					<div class="col-sm-12">
+						<p class="text-center font30 greenColor">
+							<span> 5</span>
+						</p>
+						<p class="text-center">Week Cources</p>
+					</div>
+					<div class="col-sm-12">
+						<p class="text-center font30 greenColor">
+							<span> 4</span>
+						</p>
+						<p class="text-center">Year Program</p>
+					</div>
+					<div class="col-sm-12">
+						<p class="text-center font30 greenColor">
+							<span>120</span>
+						</p>
+						<p class="text-center">Credit Hours</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{/programData}}

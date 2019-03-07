@@ -1,0 +1,23 @@
+<div class="areaOfInterestItems col-lg-12 col-xs-12 col-sm-12 col-md-12">
+    {{#areaOfInterest}}
+
+        <div class="topPrograms-icon prog-block col-lg-3 col-sm-4 col-md-3 col-xs-6">
+            <div id="aoi-{{aoilist}}" class="main-block" role="radio" tabindex="0" onclick="singlePageProgramFinder.tileClickEvent('{{aoilist}}','areaOfInterestItems','programsResult','areaOfInterestParentItemsDiv',event)" onkeydown="singlePageProgramFinder.tileClickEvent('{{aoilist}}','areaOfInterestItems','programsResult','areaOfInterestParentItemsDiv',event)">
+                <input class="aoiValue hide" value='{{aoilist}}' />
+                <a class="topPrograms-item prog-item" target="_blank">
+                    <div class="imgBlock">
+                        {{#ifCond iconImage "!=" "" }}
+                            <img alt="" src="{{iconImage}}" />
+                        {{/ifCond}}
+                        {{#ifCond iconImage "==" "" }}
+                            <img alt="" src="_blank" />
+                        {{/ifCond}}
+                    </div>
+                    <span class="mainHeading">{{iconHeading}}</span>
+                    <span class="subHeading">{{iconSubHeading}}</span>
+                </a>
+            </div>
+        </div>
+
+    {{/areaOfInterest}}
+</div>

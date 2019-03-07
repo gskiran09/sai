@@ -1,0 +1,50 @@
+<span class="topProgram" tabindex="0">{{topProgramLabel}} </span>
+
+<div class="topPrograms col-lg-12 col-xs-12 col-sm-12 col-md-12">
+    {{#fos}}
+        {{#ifCond programType "!=" "additionalProgram" }}
+            <div class="topPrograms-icon prog-block col-lg-3 col-sm-4 col-md-3 col-xs-6">
+                <div id="fos-{{foslist}}"class="main-block" role="radio" tabindex="0" class="main-block" onclick="singlePageProgramFinder.tileClickEvent('{{foslist}}','programsItems','degreeLevels','preferedProgramsItems',event)" onkeydown="singlePageProgramFinder.tileClickEvent('{{foslist}}','programsItems','degreeLevels','preferedProgramsItems',event)">
+                    <input class="fosValue hide" value='{{foslist}}' />
+                    <a class="topPrograms-item prog-item" target="_blank">
+                        <div class="imgBlock">
+                            {{#ifCond iconImage "!=" "" }}
+                                <img alt="" src="{{iconImage}}" />
+                            {{/ifCond}}
+                            {{#ifCond iconImage "==" "" }}
+                                <img alt="" src="_blank" />
+                            {{/ifCond}}
+                        </div>
+                        <span class="mainHeading">{{iconHeading}}</span>
+                        <span class="subHeading">{{iconSubHeading}}</span>
+                    </a>
+                </div>
+            </div>
+        {{/ifCond}}
+    {{/fos}}
+</div>
+
+<span class="additionalProgram" tabindex="0">{{additionalProgramLabel}}</span>
+<div class="secondaryPrograms col-lg-12 col-xs-12 col-sm-12 col-md-12">
+    {{#fos}}
+        {{#ifCond programType "!=" "topProgram" }}
+            <div class="secondaryPrograms-icon {{displayFlag}} prog-block col-lg-3 col-sm-4 col-md-3 col-xs-6">
+                <div id="fos-{{foslist}}" class="main-block" role="radio" tabindex="0" onclick="singlePageProgramFinder.tileClickEvent('{{foslist}}','programsItems','degreeLevels','preferedProgramsItems',event)" onkeydown="singlePageProgramFinder.tileClickEvent('{{foslist}}','programsItems','degreeLevels','preferedProgramsItems',event)">
+                    <input class="fosValue hide" value='{{foslist}}' />
+                    <a class="secondaryPrograms-item prog-item" target="_blank">
+                        <div class="imgBlock">
+                            {{#ifCond iconImage "!=" "" }}
+                                <img alt="" src="{{iconImage}}" />
+                            {{/ifCond}}
+                            {{#ifCond iconImage "==" "" }}
+                                <img alt="" src="_blank" />
+                            {{/ifCond}}
+                        </div>
+                        <span class="mainHeading">{{iconHeading}}</span>
+                        <span class="subHeading">{{iconSubHeading}}</span>
+                    </a>
+                </div>
+            </div>
+        {{/ifCond}}
+    {{/fos}}
+</div>
