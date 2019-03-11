@@ -1,0 +1,14 @@
+
+
+{{#aoiData}}
+<div class="">
+	<div class="">
+		<div class="pL0">
+			<div class="custom-checkbox">
+                <input type="checkbox" class="aoiData" value="{{name}}" id="aoi{{name}}">
+            <label for="aoi{{name}}">{{title}}</label>
+			</div>
+		</div>
+	</div>
+</div>
+{{/aoiData}} 

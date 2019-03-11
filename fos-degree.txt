@@ -1,0 +1,10 @@
+{{#degreeData}}
+<div class="">
+    <div class="pL0">
+        <div class="custom-checkbox">
+            <input type="checkbox" class="degreeData" value="{{name}}" id="{{name}}">
+            <label for="{{name}}">{{title}}</label>
+        </div>
+    </div>
+</div>
+{{/degreeData}}
